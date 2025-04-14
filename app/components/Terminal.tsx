@@ -26,17 +26,17 @@ const Terminal = () => {
     if (trimmedCmd === "") {
       return
     } else if (trimmedCmd === "whoami") {
-      setHistory((prev) => [...prev, "andrea"])
+      setHistory((prev) => [...prev, "Andrea Serravalle"])
     } else if (trimmedCmd === "ls -l" || trimmedCmd === "ls") {
       setHistory((prev) => [
         ...prev,
+        "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 skills",
         "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 projects",
-        "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 blog",
-        "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 misc",
+        "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 contacts"
       ])
     } else if (trimmedCmd.startsWith("cd ")) {
       const destination = trimmedCmd.substring(3).trim()
-      if (["projects", "blog", "misc"].includes(destination)) {
+      if (["projects", "skils", "contact"].includes(destination)) {
         setHistory((prev) => [...prev, `Navigating to /${destination}...`])
         setTimeout(() => {
           router.push(`/${destination}`)
@@ -52,7 +52,7 @@ const Terminal = () => {
         "Available commands:",
         "  whoami    - Display current user",
         "  ls, ls -l - List directories",
-        "  cd [dir]  - Change to directory (projects, blog, misc)",
+        "  cd [dir]  - Change to directory (skills, projects, contacts)",
         "  clear     - Clear terminal",
         "  help      - Display this help message",
       ])
@@ -118,8 +118,8 @@ const Terminal = () => {
       {/* Terminal body */}
       <div
         ref={terminalRef}
-        className="bg-black text-white dark:bg-black dark:text-white light-mode:bg-white light-mode:text-black p-4 font-mono h-64 overflow-y-auto text-left"
-      >
+        className="bg-black text-white dark:bg-black dark:text-white light-mode:bg-white light-mode:text-black p-4 font-mono text-lg h-64 overflow-y-auto text-left"
+        >
         {history.map((line, i) => (
           <div key={i} className="whitespace-pre-wrap mb-1 text-left">
             {line}

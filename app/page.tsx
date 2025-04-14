@@ -6,11 +6,11 @@ export default function EntryPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-[70vh] text-center">
       <div className="max-w-2xl mx-auto mb-12 w-full">
-        <h2 className="text-3xl font-pixel mb-6">Welcome to My Digital Space</h2>
+        <h2 className="text-3xl font-pixel mb-6">Welcome to My Digital Corner</h2>
 
         <p className="font-mono text-lg mb-8">
-          I'm Andrea Serravalle, a developer and digital creator passionate about technology, art, and finance. This is
-          my corner of the internet where I share my thoughts, projects, and experiences.
+          Hey there! I'm Andrea, an Ex Freelance Machine Learning Engineer for Quantitative Finance passionate about all things Data - from Sourcing, to System Design.
+          This is my little corner of the Internet where You can use the Terminal to get to know more about me!!
         </p>
 
         <Terminal />
