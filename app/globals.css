@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+}
+
+.light-mode {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 255, 255, 255;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+.font-pixel {
+  font-family: var(--font-press-start-2p);
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  letter-spacing: -1px;
+}
+
+.light-mode .font-pixel {
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.font-mono {
+  font-family: var(--font-vt323);
+}
+
+/* Pixelated border effect */
+.pixelated-border {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #000, 0 0 0 6px #ffffff;
+}
+
+.light-mode .pixelated-border {
+  box-shadow: 0 0 0 2px #000000, 0 0 0 4px #f8fafc, 0 0 0 6px #000000;
+}
