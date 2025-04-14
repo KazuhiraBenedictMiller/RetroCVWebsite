@@ -2,12 +2,12 @@ import { Github, Linkedin, Mail, Twitter } from "lucide-react"
 
 const Footer = () => {
   return (
-    <footer className="w-full py-8 mt-8 bg-inherit text-black dark:text-white transition-colors duration-200">
+    <footer className="w-full bg-inherit text-black dark:text-white transition-colors duration-200">
       <div className="max-w-4xl mx-auto px-4">
         <div className="flex flex-col items-center">
           <h2 className="text-xl font-pixel mb-4">CONNECT WITH ME</h2>
 
-          <div className="flex space-x-6 mb-6">
+          <div className="flex space-x-6 mb-2">
             <a
               href="https://github.com/KazuhiraBenedictMiller"
               target="_blank"

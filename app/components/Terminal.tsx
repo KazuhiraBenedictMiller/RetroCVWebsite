@@ -27,16 +27,25 @@ const Terminal = () => {
       return
     } else if (trimmedCmd === "whoami") {
       setHistory((prev) => [...prev, "Andrea Serravalle"])
+    } else if (trimmedCmd === "downloadcv") {
+      setHistory((prev) => [...prev, "Downloading CV..."])
+      setTimeout(() => {
+        const link = document.createElement("a")
+        link.href = "/AASerravalleCV.pdf"
+        link.download = "Andrea_SerravalleCV.pdf"
+        document.body.appendChild(link)
+        link.click()
+        document.body.removeChild(link)
+      }, 500)
     } else if (trimmedCmd === "ls -l" || trimmedCmd === "ls") {
       setHistory((prev) => [
         ...prev,
         "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 skills",
         "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 projects",
-        "drwxr-xr-x  2 andrea  users  4096 Apr 14 10:08 contacts"
       ])
     } else if (trimmedCmd.startsWith("cd ")) {
       const destination = trimmedCmd.substring(3).trim()
-      if (["projects", "skils", "contact"].includes(destination)) {
+      if (["projects", "skills", "contacts"].includes(destination)) {
         setHistory((prev) => [...prev, `Navigating to /${destination}...`])
         setTimeout(() => {
           router.push(`/${destination}`)
@@ -50,11 +59,12 @@ const Terminal = () => {
       setHistory((prev) => [
         ...prev,
         "Available commands:",
-        "  whoami    - Display current user",
-        "  ls, ls -l - List directories",
-        "  cd [dir]  - Change to directory (skills, projects, contacts)",
-        "  clear     - Clear terminal",
-        "  help      - Display this help message",
+        "  help         - Display this help message",
+        "  whoami       - Display current user",
+        "  downloadcv   - Download my CV",
+        "  ls, ls -l    - List directories",
+        "  cd [dir]     - Change to directory (skills, projects)",
+        "  clear        - Clear terminal",
       ])
     } else {
       setHistory((prev) => [...prev, `command not found: ${trimmedCmd}`])
@@ -104,7 +114,7 @@ const Terminal = () => {
   }
 
   return (
-    <div className="w-full mb-10 rounded-md overflow-hidden pixelated-border" onClick={focusInput}>
+    <div className="w-full mb-0 rounded-md overflow-hidden pixelated-border" onClick={focusInput}>
       {/* Terminal header */}
       <div className="bg-gray-800 dark:bg-gray-800 light-mode:bg-gray-200 px-4 py-2 flex items-center">
         <div className="flex space-x-2 mr-4">

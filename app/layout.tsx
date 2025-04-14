@@ -21,12 +21,6 @@ const vt323 = VT323({
   variable: "--font-vt323",
 })
 
-export const metadata = {
-  title: "Andrea Serravalle's Digital Space",
-  description: "Tech, Art, and Finance with a retro pixel aesthetic",
-    generator: 'v0.dev'
-}
-
 export default function RootLayout({
   children,
 }: {
@@ -40,7 +34,7 @@ export default function RootLayout({
         <PixelatedBackground />
         <div className="max-w-4xl mx-auto px-4 flex flex-col min-h-screen">
           {/* Top section with header and control panel */}
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between py-8">
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between py-0">
             {/* Header */}
             <header className="flex flex-col items-center  flex-grow">
               <ColorfulPixelLogo />

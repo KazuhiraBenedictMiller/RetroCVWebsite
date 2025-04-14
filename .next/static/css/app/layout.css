@@ -1162,6 +1162,12 @@ video {
 .mt-auto {
   margin-top: auto;
 }
+.mb-0 {
+  margin-bottom: 0px;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
 .block {
   display: block;
 }
@@ -1555,6 +1561,9 @@ video {
 .items-stretch {
   align-items: stretch;
 }
+.justify-start {
+  justify-content: flex-start;
+}
 .justify-center {
   justify-content: center;
 }
@@ -1945,6 +1954,10 @@ video {
   padding-top: 2rem;
   padding-bottom: 2rem;
 }
+.py-0 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -1980,6 +1993,9 @@ video {
 }
 .pt-4 {
   padding-top: 1rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
 }
 .text-left {
   text-align: left;
