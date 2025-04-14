@@ -42,10 +42,10 @@ export default function RootLayout({
           {/* Top section with header and control panel */}
           <div className="flex flex-col md:flex-row md:items-center md:justify-between py-8">
             {/* Header */}
-            <header className="flex flex-col items-center md:items-start flex-grow">
+            <header className="flex flex-col items-center  flex-grow">
               <ColorfulPixelLogo />
-              <p className="text-xl text-center md:text-left font-mono flex items-center">
-                Developer • Creator • Thinker <BlinkingCursor />
+              <p className="text-xl text-center font-mono flex items-center">
+                Data • Machine Learning • Artificial Intelligence <BlinkingCursor />
               </p>
             </header>
 
