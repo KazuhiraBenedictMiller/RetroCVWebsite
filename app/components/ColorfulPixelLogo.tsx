@@ -5,8 +5,6 @@ import { useEffect, useState } from "react"
 const ColorfulPixelLogo = () => {
   const [mounted, setMounted] = useState(false)
 
-  // Define the pixel pattern for "Andrea Serravalle"
-  // This is a 32x8 grid representation of the text
   const textPattern = [
     "                                     ",
     "            ##   #   #  ###   ###   ###   ##   ",
@@ -23,7 +21,6 @@ const ColorfulPixelLogo = () => {
     "                                                ",
   ]
 
-  // Colors for the pixels
   const colors = [
     "bg-red-400",
     "bg-orange-400",
@@ -45,22 +42,21 @@ const ColorfulPixelLogo = () => {
   }
 
   return (
-    <div className="flex justify-center w-full mb-6">
+    <div className="flex justify-center w-full mb-6 overflow-x-auto">
       <div className="grid grid-rows-12 gap-0.5 min-w-max">
         {textPattern.map((row, rowIndex) => (
           <div key={rowIndex} className="flex gap-0.5">
             {row.split("").map((cell, cellIndex) => {
-              // Get a deterministic but seemingly random color for each pixel
               const colorIndex = (rowIndex * 3 + cellIndex * 7) % colors.length
 
               return (
                 <div
                   key={cellIndex}
-                  className={`w-2 h-2 ${
+                  className={`aspect-square ${
                     cell === "#"
-                      ? `${colors[colorIndex]} dark:${colors[colorIndex]} light-mode:${colors[colorIndex]}`
+                      ? `${colors[colorIndex]}`
                       : "bg-transparent"
-                  }`}
+                  } w-[1.25vw] max-w-[0.5rem] sm:w-1.5 md:w-2`}
                 />
               )
             })}
