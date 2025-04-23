@@ -23,8 +23,8 @@ const projects = [
     title: "PyndianaJones",
     description: "An AI Agent to Learn Python Programming while Playing a Text Based Game...COMING SOON",
     tags: ["Python", "AI", "Agents"],
-    //github: "https://github.com/andreaserravalle/pixel-art-generator",
-    //demo: "",
+    github: "https://github.com/KazuhiraBenedictMiller/PyndianaJones",
+    demo: "https://github.com/KazuhiraBenedictMiller/PyndianaJones",
   },
 ]
 
